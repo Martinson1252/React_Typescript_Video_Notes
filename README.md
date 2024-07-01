@@ -1,12 +1,12 @@
 ## Video Notes
 
 An app created using `React`, `Node.js` and `Typescript`.  
-Enables creating notes of video frames and saving them on physical drive.  
+It enables creating notes of video frames and saving them on physical drive.  
 It has 2 sides `client` and `server`.  
-Client handles frontend and server backend (also handles saving files on local drive and synchronizes the data).  
-When chosen drawing mode user has basic tools such us: Pen, Line, Circle, Square, Rectangle, Eraser, Color Selector.  
+Client handles frontend while the server handles the backend including saving files on local drive and synchronizing the data.  
+When in drawing mode user has basic tools such us: Pen, Line, Circle, Square, Rectangle, Eraser, Color Selector.  
 Notes appear on left side panel.  
-When clicked the app automatically moves to specific frame with the note.  
+When a note is clicked the app automatically moves to the specific frame with the note.  
 Each note can be renamed and deleted.   
 
 
