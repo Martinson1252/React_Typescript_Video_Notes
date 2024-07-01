@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="49.999989"
+   viewBox="0 0 13.229166 13.229164"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="D:/Pobrane/"
+   sodipodi:docname="circle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="true"
+     showborder="true"
+     inkscape:zoom="11.48844"
+     inkscape:cx="13.143647"
+     inkscape:cy="30.683017"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="1911"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5"
+     showguides="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid182"
+       empcolor="#ffffff"
+       empopacity="0.5372549"
+       color="#ffffff"
+       opacity="0.1372549"
+       spacingx="2.6458333"
+       spacingy="2.6458333"
+       visible="true"
+       enabled="false"
+       originx="-79.374997"
+       originy="-47.625002"
+       units="px"
+       empspacing="6" />
+    <inkscape:grid
+       id="grid79"
+       units="px"
+       originx="-79.374997"
+       originy="-47.625002"
+       spacingx="0.26458333"
+       spacingy="0.26458333"
+       empcolor="#ffffff"
+       empopacity="0.21960784"
+       color="#ffffff"
+       opacity="0.09019608"
+       empspacing="10"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true"
+       enabled="false"
+       snapvisiblegridlinesonly="true" />
+    <inkscape:grid
+       type="axonomgrid"
+       id="grid5"
+       units="mm"
+       originx="-79.374997"
+       originy="-47.625002"
+       spacingx="0"
+       spacingy="1"
+       empcolor="#ffffff"
+       empopacity="0.2745098"
+       color="#ffffff"
+       opacity="0.1254902"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true"
+       enabled="false" />
+    <sodipodi:guide
+       position="6.6145792,6.6145871"
+       orientation="1,0"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="6.6145789,6.6145874"
+       orientation="0,-1"
+       id="guide2"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="ArrowWide"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path5" />
+    </marker>
+    <inkscape:path-effect
+       effect="dashed_stroke"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       numberdashes="3"
+       holefactor="0.25"
+       splitsegments="true"
+       halfextreme="true"
+       unifysegment="true"
+       message="Add &lt;b&gt;&quot;Fill Between Many LPE&quot;&lt;/b&gt; to add fill." />
+    <inkscape:path-effect
+       effect="copy_rotate"
+       starting_point="93.171624,116.32264"
+       origin="89.864327,116.32264"
+       id="path-effect8"
+       is_visible="true"
+       lpeversion="1.2"
+       lpesatellites=""
+       method="normal"
+       num_copies="6"
+       starting_angle="0"
+       rotation_angle="72"
+       gap="0"
+       copies_to_360="true"
+       mirror_copies="false"
+       split_items="false"
+       link_styles="false" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : -135.27084 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="209.99999 : -135.27084 : 1"
+       inkscape:persp3d-origin="105 : -184.77084 : 1"
+       id="perspective1" />
+    <rect
+       x="250"
+       y="199.99998"
+       width="120"
+       height="59.999996"
+       id="rect34" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter57"
+       x="-0.10028686"
+       y="-0.026078297"
+       width="2.0362976"
+       height="1.2694757">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="1.000000"
+         flood-color="rgb(151,151,151)"
+         id="feFlood56" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="0.100000"
+         id="feGaussianBlur56" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="2.000000"
+         dy="2.000000"
+         id="feOffset56" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite56" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite57" />
+    </filter>
+  </defs>
+  <ellipse
+     style="fill:none;stroke-width:0.63499999;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill;stroke:#000000;stroke-dasharray:none"
+     id="path1"
+     cx="6.6145792"
+     cy="6.6145763"
+     rx="5.0270834"
+     ry="5.0270829" />
+  <circle
+     style="fill:#35ff00;stroke:none;stroke-width:0.238125;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill;fill-opacity:1"
+     id="path2"
+     cx="6.6145792"
+     cy="6.6145763"
+     r="0.436804" />
+  <path
+     style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#35ff00;stroke-width:0.42333333;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:0.42333333, 0.42333333;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowWide)"
+     d="M 6.923446,6.9234437 10.16926,10.169264"
+     id="path3"
+     inkscape:connector-type="polyline"
+     inkscape:connector-curvature="0"
+     inkscape:connection-start="#path2"
+     sodipodi:nodetypes="cc" />
+</svg>

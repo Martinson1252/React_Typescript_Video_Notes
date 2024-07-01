@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="793.70081"
+   height="1122.5197"
+   viewBox="0 0 210 296.99999"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="250"
+       y="199.99998"
+       width="120"
+       height="59.999996"
+       id="rect34" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter57"
+       x="-0.10028686"
+       y="-0.026078297"
+       width="2.0362976"
+       height="1.2694757">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="1.000000"
+         flood-color="rgb(151,151,151)"
+         id="feFlood56" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="0.100000"
+         id="feGaussianBlur56" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="2.000000"
+         dy="2.000000"
+         id="feOffset56" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite56" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite57" />
+    </filter>
+  </defs>
+  <g
+     id="g18"
+     style="display:inline">
+    <path
+       id="path1"
+       style="fill:#b98200;fill-opacity:1;stroke:none;stroke-width:0.555625;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+       d="m 11.112495,6.0854168 c -0.79375,2.6458332 -3.7041662,0.79375 -4.2333329,2.1166666 -0.2385144,0.596286 0.4673698,1.1484386 0.79375,1.8520836 0.098829,0.213065 0.1322915,0.451192 0,0.79375 -0.1532565,0.396844 -0.554273,0.779315 -0.79375,0.79375 -2.7433082,0.165365 -5.2916656,-2.2507024 -5.2916658,-5.0270835 0,-2.7763812 2.2507017,-5.0270829 5.0270829,-5.0270829 2.7763812,1e-7 5.2957028,1.8386252 4.4979158,4.4979162 z"
+       mask="none" />
+    <g
+       id="g15">
+      <circle
+         style="fill:#008000;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.105833, 0.105833;paint-order:markers stroke fill"
+         id="circle15"
+         r="0.79374999"
+         cy="2.8773439"
+         cx="7.0114536" />
+      <circle
+         style="fill:#aa0000;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.105833, 0.105833;paint-order:markers stroke fill"
+         id="circle12"
+         cx="9.5249949"
+         cy="4.2333336"
+         r="0.79374999" />
+      <circle
+         style="fill:#006680;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.105833, 0.105833;paint-order:markers stroke fill"
+         id="circle13"
+         r="0.79374999"
+         cy="6.0854168"
+         cx="3.1749957" />
+      <circle
+         style="fill:#d4aa00;stroke:none;stroke-width:0.105833;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.105833, 0.105833;paint-order:markers stroke fill"
+         id="circle14"
+         r="0.79374999"
+         cy="3.9687502"
+         cx="4.4979124" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    
+    
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    
+    <!-- <canvas id="videoCanvas"> 
+    </canvas> -->
+    
+    <div class="wholeApp">
+      <div class="notesPanel" id="notesPanel">
+        
+        <div class="noteElement" id="noteElementTEMP" >
+          <input type="radio" name="notecheck" class="checkbox_selector_useless" id="1">
+          <label class="noteChecked" for="1" >
+              <textarea class="textareaNoteElementName" id="textareaNoteElementName" spellcheck="false"></textarea>
+              <div class="noteOptionHolder" id="noteRenameOptionHolder" style="visibility:hidden">
+                <button class="editSmall confirmSmall" id="confirmSmallButton"><img class="smallIMG" src="./confirm_small.svg"/></button>
+                <button class="editSmall cancelSmall" id="cancelSmallButton"><img class="smallIMG" src="./cancel_small.svg"/></button>
+              </div>
+              <div class="noteOptionHolder">
+                <button class="editSmall renameSmall" id="renameNoteSmallButton" ><img class="smallIMG" src="./edit_small.svg"/></button>
+                <button class="editSmall removeSmall" id="removeNoteSmallButton"><img class="smallIMG" src="./trash_small.svg"/></button>
+              </div>
+              
+          </label>
+        </div>
+        
+        
+        <div class="notesTopBar"> <span class="topText">Notes</span><button id="deleteAllButton" title="Remove all"><img class="smallIMG" src="./trash_small.svg"/></button></div>
+        <div class="notesContainer" id="notesContainer">
+        </div>
+      </div>
+      
+      
+      <div id="videoSection">
+      
+      <video controls id="Wideo"  >
+        <source src="./videos/video.mp4" type="video/mp4" />
+      </video>
+    
+    <div id="drawingSection">  
+      <canvas id="videoDrawCanvas"></canvas>
+    <div id="drawingToolbar">
+      <div id="drawindtools">
+        
+        <input type="radio" name="toolsel" class="checkbox_selector" id="pen">
+      <label class="labell" for="pen" title="Draw with a pen"><img src="./pen.svg"/>
+      <!-- <button id="tool" type="submit" name="toolsel" for="pen"> <img src="./pen_icon.svg"/> </button> -->
+    </label>
+  
+  <input type="radio" name="toolsel" class="checkbox_selector" id="line">
+<label class="labell" for="line" title="Draw a line"><img src="./line.svg"/>
+</label>
+<input type="radio" name="toolsel" class="checkbox_selector" id="circle">
+<label class="labell" for="circle" title="Draw a circle"><img src="./circle.svg"/>
+</label>
+<input type="radio" name="toolsel" class="checkbox_selector" id="square">
+<label class="labell" for="square" title="Draw a square"><img src="./square.svg"/>
+</label>
+<input type="radio" name="toolsel" class="checkbox_selector" id="rectangle">
+<label class="labell" for="rectangle" title="Draw a rectangle"><img src="./rectangle.svg"/>
+</label>
+<input type="radio" name="toolsel" class="checkbox_selector" id="text">
+<label class="labell" for="text" style="display:none" title="obraz"><img src=""/>
+</label>
+<input type="radio" name="toolsel" class="checkbox_selector" id="eraser">
+<label class="labell" for="eraser" title="Erase a stroke"><img src="./eraser.svg"/>
+</label>
+
+<label class="labell" id="colorpicker" title="Pick a color">
+  <img class="colorpickericon" src="./color_palette.svg"/>
+<input type="color"   value="#12fd0f"  id="pickacolor" >
+</label>
+
+<label  class="labell" id="clear_canvas_button" title="Clear canvas"><img src="./clear_page.svg"/></label>
+<label  class="labell" id="save_button" title="Save note"><img src="./save.svg"/></label>
+
+<div>
+  <div id="set_text_value_cont">
+    <span id="set_line_width_text" >Width:</span> 
+  <label id="change_text_input__left" class="change_text_button"><img src="./left.svg"></label>
+<input type="text" id="change_text_input__click" class="change_text_input">
+<label id="change_text_input__right" class="change_text_button"><img src="./right.svg"></label>
+</div>
+<input type="range" min="1" max="50" value="7" id="set_line_width_slider" id="set_line_width" title="Set line width">
+</div>
+
+</div>
+
+<input type="checkbox" value="on" class="edit_selector_useless" id="editcheck" >
+<label class="editframebutton" for="editcheck">Edit frame</label>
+
+</div>
+</div>
+
+</div>
+
+
+<div id="title_window" >
+  <span class="title_window_title">Note title</span>
+<input id="title_window_input" placeholder="Type your title here...">
+<button id="title_window_cancel">Cancel</button>
+<button id="title_window_confirm" class="title_window_confirm">Confirm</button>
+</div>
+
+<div id="message_window" >
+  <span class="message_window_title">The same name exist!</span>
+
+<button id="message_window_confirm" class="message_window_confirm">Ok</button>
+</div>
+
+<div class="rightContainer"></div>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
