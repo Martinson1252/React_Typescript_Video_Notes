@@ -1,9 +1,9 @@
 ## Video Notes
 
-An app creater using `React` and `Typescript`.  
+An app created using `React` and `Typescript`.  
 Enables creating notes of video frames and saving them on physical drive.  
 It has 2 sides `client` and `server`.  
-Client handles frontend and server backend (also handles saving files on local drive).  
+Client handles frontend and server backend (also handles saving files on local drive and synchronizes the data).  
 
 
 
