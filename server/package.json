@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "server.js",
+  "main": "api/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch notes.txt server.js",
+    "start": "nodemon --watch notes.txt server",
+    "server":"api/index.js",
     "dev": "nodemon server"
   },
   "keywords": [],
