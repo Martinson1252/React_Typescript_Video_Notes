@@ -196,7 +196,7 @@ function App() {
     }
     
     function getfetcheddata(){
-      return fetch("/api",{
+      return fetch("https://react-typescript-videonotes-server-martinsons-projects.vercel.app/api",{
       })
       .then( response => {
         return response.json().then((data)=>{
