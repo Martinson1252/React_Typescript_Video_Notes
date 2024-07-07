@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import unidecode from "unidecode";
+import {Buffer} from "buffer" 
 
 function App() {
   
@@ -240,19 +241,32 @@ function App() {
     senddata(formData);
     }
     
-    
+    function bufferToDataURL(buffer, mimeType) {
+      const base64 = buffer.toString('base64');
+      return `data:${mimeType};base64,${base64}`;
+  }
     
     function import_image (imageName) {
-      var image = new Image(Canvas.width,Canvas.height);
-      import(
-    `./sketch_notes/${imageName}.png`
-  ).then((img) => {
-    image.src = img.default;
-  ctx.clearRect(0,0,Canvas.width,Canvas.height);
-image.onload = function () {
-  ctx.drawImage(image,0,0,Canvas.width,Canvas.height); 
+      var imgData = new Image();
+      var dataURL = "";
+      const mimeType = 'image/png';
+       {lista.forEach(img=>{
+        if (img.fileName==imageName){
+          dataURL = bufferToDataURL(img.imgData.imgData, img.imgData.contentType);
+          return;
+        }
+      });
+    };
+    
+    
+    console.log(dataURL);
+    //var image = new Image(); 
+    imgData.src = dataURL;
+    ctx.clearRect(0,0,Canvas.width,Canvas.height);
+    imgData.onload = function () {
+      ctx.drawImage(imgData,0,0,Canvas.width,Canvas.height); 
 }
-})
+
 }
     
     function saveImage() {

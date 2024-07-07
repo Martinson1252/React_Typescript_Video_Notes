@@ -4,7 +4,6 @@ import fs from "fs";
 import path from "path";
 import multer from "multer";
 import unidecode from "unidecode";
-import { exec } from 'child_process';
 
 // const { createCanvas, loadImage, Image } = require('canvas');
 const app = express();
@@ -14,8 +13,8 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const PORT = 8080;
 var list = [];
-var sketchesPath = `../client/src/sketch_notes/`
-var completeNotesPath = `../client/src/complete_notes/`
+var sketchesPath = `sketch_notes/`
+var completeNotesPath = `complete_notes/`
 app.use(cors());
 app.use(express.json())
 app.options("/api", (req, res) => {
@@ -48,19 +47,27 @@ function send(dataToSend)
 function ListNotes() {
   const lista = [];
   const folderpath = sketchesPath;
-
   fs.readdir(folderpath, (err, files) => {
     if (err) {
       console.error(err);
       return;
     }
+    
+    
+    
 
     const filePromises = files.map(file => {
       if (path.extname(file) === ".png") {
         const f = file.replace(".png", ".txt");
         return fs.promises.readFile(path.join(folderpath, f), 'utf8')
           .then(data => {
-            lista.push({ "fileName": file.replace(".png", ""), "time": data });
+            const image = {
+              imgData: fs.readFileSync(path.join(folderpath,file),{encoding:'base64'}),
+              //
+              contentType: `image/${path.extname(file).substring(1)}`
+            };
+            console.log("img",image);
+            lista.push({ "fileName": file.replace(".png", ""), "time": data, "imgData": image });
           })
           .catch(err => console.error(err));
       }
