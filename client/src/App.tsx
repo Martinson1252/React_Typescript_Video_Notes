@@ -212,7 +212,7 @@ function App() {
     
     function senddata(data){
       //try {
-        fetch("/api", {
+        fetch("https://react-typescript-videonotes-server.vercel.app/api", {
         method: "POST", // Use POST method
         // headers: {
         //   "Content-Type": 'charset="utf-8"', // Correct content type for JSON

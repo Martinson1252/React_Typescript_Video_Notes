@@ -7,8 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --watch notes.txt server",
-    "server":"api/index.js",
-    "dev": "nodemon server"
+    "server": "api/index.js",
+    "dev": "nodemon --watch notes.txt server"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,8 @@
     "meta-png": "^1.0.6",
     "multer": "^1.4.5-lts.1",
     "pngjs": "^7.0.0",
-    "unidecode": "^1.1.0"
+    "unidecode": "^1.1.0",
+    "vercel": "^34.3.0"
   },
   "devDependencies": {
     "nodeman": "^1.1.2"

@@ -1,10 +1,13 @@
 import  express from "express";
 import cors from "cors";
 import fs from "fs";
-import path from "path";
+import {dirname,join,extname} from "path";
 import multer from "multer";
 import unidecode from "unidecode";
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 // const { createCanvas, loadImage, Image } = require('canvas');
 const app = express();
 // const app =require("express");
@@ -13,17 +16,21 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const PORT = 8080;
 var list = [];
-var sketchesPath = `sketch_notes/`
-var completeNotesPath = `complete_notes/`
+var sketchesPath = join(__dirname,`./sketch_notes/`);
+var completeNotesPath = join(__dirname,`./complete_notes/`);
+
 app.use(cors());
+
+
 app.use(express.json())
 app.options("/api", (req, res) => {
     // CORS preflight handling
-    res.setHeader("Access-Control-Allow-Origin", "https://react-typescript-videonotes-server-martinsons-projects.vercel.app");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.set({ 'content-type': 'application/json; charset=utf-8' });
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private', 'no-cors');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private','no-cors');
     res.sendStatus(204);
     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
   });
@@ -57,14 +64,14 @@ function ListNotes() {
     
 
     const filePromises = files.map(file => {
-      if (path.extname(file) === ".png") {
+      if (extname(file) === ".png") {
         const f = file.replace(".png", ".txt");
-        return fs.promises.readFile(path.join(folderpath, f), 'utf8')
+        return fs.promises.readFile(join(folderpath, f), 'utf8')
           .then(data => {
             const image = {
-              imgData: fs.readFileSync(path.join(folderpath,file),{encoding:'base64'}),
+              imgData: fs.readFileSync(join(folderpath,file),{encoding:'base64'}),
               //
-              contentType: `image/${path.extname(file).substring(1)}`
+              contentType: `image/${extname(file).substring(1)}`
             };
             console.log("img",image);
             lista.push({ "fileName": file.replace(".png", ""), "time": data, "imgData": image });
@@ -275,3 +282,4 @@ app.post("/api", upload.fields([{name:'sketchNote',maxCount:1},{name:'completeNo
     
   });
   
+ export default app;
