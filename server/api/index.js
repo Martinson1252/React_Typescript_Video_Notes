@@ -1,14 +1,10 @@
-import  express from "express";
-import cors from "cors";
-import fs from "fs";
-import {dirname,join,extname} from "path";
-import multer from "multer";
-import unidecode from "unidecode";
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-// const { createCanvas, loadImage, Image } = require('canvas');
+const multer = require("multer");
+const express = require("express");
+const cors = require('cors');
+const path = require("path");
+fs = require("fs");
+
 const app = express();
 // const app =require("express");
 // const fs = require("fs");
@@ -16,8 +12,8 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const PORT = 8080;
 var list = [];
-var sketchesPath = join(__dirname,`./sketch_notes/`);
-var completeNotesPath = join(__dirname,`./complete_notes/`);
+var sketchesPath = path.join(__dirname,`./sketch_notes/`);
+var completeNotesPath = path.join(__dirname,`./complete_notes/`);
 
 app.use(cors());
 
@@ -25,12 +21,12 @@ app.use(cors());
 app.use(express.json())
 app.options("/api", (req, res) => {
     // CORS preflight handling
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "https://react-typescript-videonotes-server.vercel.app");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.set({ 'content-type': 'application/json; charset=utf-8' });
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private','no-cors');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private, no-cors','no-cors');
     res.sendStatus(204);
     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
   });
@@ -64,14 +60,14 @@ function ListNotes() {
     
 
     const filePromises = files.map(file => {
-      if (extname(file) === ".png") {
+      if (path.extname(file) === ".png") {
         const f = file.replace(".png", ".txt");
-        return fs.promises.readFile(join(folderpath, f), 'utf8')
+        return fs.promises.readFile(path.join(folderpath, f), 'utf8')
           .then(data => {
             const image = {
-              imgData: fs.readFileSync(join(folderpath,file),{encoding:'base64'}),
+              imgData: fs.readFileSync(path.join(folderpath,file),{encoding:'base64'}),
               //
-              contentType: `image/${extname(file).substring(1)}`
+              contentType: `image/${path.extname(file).substring(1)}`
             };
             console.log("img",image);
             lista.push({ "fileName": file.replace(".png", ""), "time": data, "imgData": image });
@@ -96,6 +92,7 @@ function ListNotes() {
   });
 }
 
+// ListNotes();
 
 function restart() {
   // app.get("/restart", (_, res) => {
@@ -282,4 +279,5 @@ app.post("/api", upload.fields([{name:'sketchNote',maxCount:1},{name:'completeNo
     
   });
   
- export default app;
+//  export default app;
+module.exports = app;
