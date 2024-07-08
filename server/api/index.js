@@ -21,12 +21,12 @@ app.use(cors());
 app.use(express.json())
 app.options("/api", (req, res) => {
     // CORS preflight handling
-    res.setHeader("Access-Control-Allow-Origin", "https://react-typescript-videonotes-server.vercel.app");
+    res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-videonotes-server.vercel.app');
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.set({ 'content-type': 'application/json; charset=utf-8' });
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private, no-cors','no-cors');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
     res.sendStatus(204);
     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
   });
