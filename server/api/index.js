@@ -15,12 +15,19 @@ var list = [];
 var sketchesPath = path.join(__dirname,`./sketch_notes/`);
 var completeNotesPath = path.join(__dirname,`./complete_notes/`);
 
-app.use(cors());
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            
+  optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 
 
 app.use(express.json())
 app.options("/api", (req, res) => {
     // CORS preflight handling
+    res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-videonotes.vercel.app');
     res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-videonotes-server.vercel.app');
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.set({ 'content-type': 'application/json; charset=utf-8' });
@@ -28,7 +35,7 @@ app.options("/api", (req, res) => {
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
     res.sendStatus(204);
-    res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+    res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
   });
 
 app.listen(PORT, ()=> { console.log("server started port: "+PORT)});
@@ -36,7 +43,7 @@ app.listen(PORT, ()=> { console.log("server started port: "+PORT)});
 function send(dataToSend)
 {
     app.get("/api", (req,res) =>{
-      res.clearCookie();
+      //res.clearCookie();
       res.send({data:dataToSend});
       // const {dane} = res.body
       console.log("Sent:",dataToSend);
