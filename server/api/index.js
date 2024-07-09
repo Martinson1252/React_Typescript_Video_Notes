@@ -16,8 +16,12 @@ var sketchesPath = path.join(__dirname,`./sketch_notes/`);
 var completeNotesPath = path.join(__dirname,`./complete_notes/`);
 
 const corsOptions ={
-  origin:'*', 
-  credentials:true,            
+  origin:'https://react-typescript-videonotes.vercel.app', 
+  //origin:'*', 
+  credentials:true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  //credentials: false,          
   optionSuccessStatus:200,
 }
 
@@ -35,6 +39,7 @@ app.options("/api", (req, res) => {
     res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
     res.sendStatus(204);
     res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+    //res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
   });
 
 app.listen(PORT, ()=> { console.log("server started port: "+PORT)});
@@ -42,7 +47,7 @@ app.listen(PORT, ()=> { console.log("server started port: "+PORT)});
 function send(dataToSend)
 {
     app.get("/api", (req,res) =>{
-      //res.clearCookie();
+      res.clearCookie();
       res.send({data:dataToSend});
       // const {dane} = res.body
       console.log("Sent:",dataToSend);
@@ -98,7 +103,7 @@ function ListNotes() {
   });
 }
 
-// ListNotes();
+ListNotes();
 
 function restart() {
   // app.get("/restart", (_, res) => {
