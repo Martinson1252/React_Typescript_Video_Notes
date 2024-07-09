@@ -28,7 +28,6 @@ app.use(express.json())
 app.options("/api", (req, res) => {
     // CORS preflight handling
     res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-videonotes.vercel.app');
-    res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-videonotes-server.vercel.app');
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.set({ 'content-type': 'application/json; charset=utf-8' });
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");

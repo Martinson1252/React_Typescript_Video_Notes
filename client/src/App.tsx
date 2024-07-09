@@ -196,7 +196,13 @@ function App() {
     }
     
     function getfetcheddata(){
+     
       return fetch('https://react-typescript-videonotes-server.vercel.app/api',{
+        mode: 'cors',
+        // credentials: 'include',
+        // method: 'GET',
+        headers: {'Origin':'https://react-typescript-videonotes.vercel.app','Accept': 'application/json','Content-Type': 'application/json'
+        }
       })
       .then( response => {
         return response.json().then((data)=>{
@@ -214,6 +220,10 @@ function App() {
       //try {
         fetch("https://react-typescript-videonotes-server.vercel.app/api", {
         method: "POST", // Use POST method
+        mode: 'cors',
+        // credentials: 'include',
+        headers: {'Origin':'https://react-typescript-videonotes.vercel.app','Accept': 'application/json','Content-Type': 'application/json'
+        },
         // headers: {
         //   "Content-Type": 'charset="utf-8"', // Correct content type for JSON
         // },
