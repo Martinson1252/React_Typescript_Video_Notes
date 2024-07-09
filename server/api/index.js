@@ -103,7 +103,7 @@ function ListNotes() {
   });
 }
 
-ListNotes();
+// ListNotes();
 
 function restart() {
   // app.get("/restart", (_, res) => {
