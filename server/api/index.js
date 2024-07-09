@@ -16,7 +16,7 @@ var sketchesPath = path.join(__dirname,`./sketch_notes/`);
 var completeNotesPath = path.join(__dirname,`./complete_notes/`);
 
 const corsOptions ={
-  origin:'https://react-typescript-videonotes.vercel.app', 
+  origin:'https://react-typescript-video-notes.onrender.com', 
   //origin:'*', 
   credentials:true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -31,7 +31,7 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.options("/api", (req, res) => {
     // CORS preflight handling
-    res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-videonotes.vercel.app');
+    res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-video-notes.onrender.com');
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.set({ 'content-type': 'application/json; charset=utf-8' });
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");

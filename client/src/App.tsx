@@ -197,12 +197,12 @@ function App() {
     
     function getfetcheddata(){
      
-      return fetch('https://react-typescript-videonotes-server.vercel.app/api',{
+      return fetch('https://react-typescript-video-notes-server.onrender.com/api',{
         mode: 'cors',
         //credentials: 'include',
         //credentials: 'omit',
         //method: 'GET',
-        headers: {'Origin':'https://react-typescript-videonotes.vercel.app',
+        headers: {'Origin':'https://react-typescript-video-notes.onrender.com',
         'Accept': 'application/json','Content-Type': 'application/json'
         }
       })
@@ -220,12 +220,12 @@ function App() {
     
     function senddata(data){
       //try {
-        fetch("https://react-typescript-videonotes-server.vercel.app/api", {
+        fetch("https://react-typescript-video-notes-server.onrender.com/api", {
         //credentials: 'include',
         //credentials: 'omit',
         method: "POST", // Use POST method
         mode: 'cors',
-        headers: {'Origin':'https://react-typescript-videonotes.vercel.app',
+        headers: {'Origin':'https://react-typescript-video-notes.onrender.com',
           //"Content-Type": 'charset="utf-8"', // Correct content type for JSON
           'Accept': 'application/json','Content-Type': 'application/json'
           },

@@ -2,7 +2,7 @@
   "name": "video_notes",
   "version": "0.1.0",
   "main":"App.tsx",
-  "proxy":"https://react-typescript-videonotes-server.vercel.app",
+  
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
