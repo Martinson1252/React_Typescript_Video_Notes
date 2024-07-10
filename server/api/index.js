@@ -26,7 +26,8 @@ const corsOptions ={
 }
 
 app.use(cors(corsOptions))
-
+const compression = require('compression');
+app.use(compression());
 
 app.use(express.json())
 app.options("/api", (req, res) => {
@@ -48,7 +49,7 @@ function send(dataToSend)
 {
     app.get("/api", (req,res) =>{
       res.clearCookie();
-      res.send({data:dataToSend});
+      res.status(200).send({data:dataToSend});
       // const {dane} = res.body
       console.log("Sent:",dataToSend);
 });
