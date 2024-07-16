@@ -16,7 +16,7 @@ var sketchesPath = path.join(__dirname,`./sketch_notes/`);
 var completeNotesPath = path.join(__dirname,`./complete_notes/`);
 
 const corsOptions ={
-  origin:'https://react-typescript-video-notes.onrender.com', 
+  origin:'https://react-typescript-videonotes.vercel.app', 
   //origin:'*', 
   credentials:true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -32,7 +32,7 @@ app.use(compression());
 app.use(express.json())
 app.options("/api", (req, res) => {
     // CORS preflight handling
-    res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-video-notes.onrender.com');
+    res.setHeader("Access-Control-Allow-Origin", 'https://react-typescript-videonotes.vercel.app');
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.set({ 'content-type': 'application/json; charset=utf-8' });
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -124,19 +124,12 @@ function RemoveAllNotes(){
               return;
             }         
           });});});
-  fs.readdir(folderpath2, (err, files) => {
-    files.forEach(file => {
-          fs.rm(folderpath2+file, (err, data) => {
-            if (err) {
-              console.error(err);
-              return;
-            }         
-          });});});
+  
   
           restart();
 }
 
-//ListNotes();
+ListNotes();
 
 function SaveNote(req,res){
   const filePath1 = `${completeNotesPath}${req.files.completeNote[0].originalname}`;
@@ -144,14 +137,7 @@ function SaveNote(req,res){
   const textFile = req.files.sketchNote[0].originalname.replace(".png",".txt");
   const textFilePath = `${sketchesPath}${textFile}`;
   //saving completeNote
-  fs.writeFile(filePath1, req.files.completeNote[0].buffer, 'utf8', (err) => {
-    if (err) {
-      console.error('Error saving file:', err);
-      res.status(500).send('Error saving file');
-    } else {
-      console.log('File saved:', filePath1);
-    }
-  }); //saving sketchNote
+  //saving sketchNote
   fs.writeFile(filePath2, req.files.sketchNote[0].buffer, 'utf8' ,(err) => {
     if (err) {
       console.error('Error saving file:', err);
@@ -194,17 +180,7 @@ function SaveNote(req,res){
             });
           
           });
-      fs.readdir(folderpath2, (err, files) => {
-        files.forEach(file => {
-          if (file.replaceAll(".png","") == (req.body.noteName)){
-              fs.rm(folderpath2+file, (err, data) => {
-                if (err) {
-                  console.error(err);
-                  return;
-                }         
-              });
-          }
-            });});
+      
       
               restart();
     }
@@ -218,17 +194,7 @@ function SaveNote(req,res){
       const filePath2old = `${sketchesPath}${req.body.oldName}`;
       const filePath2new = `${sketchesPath}${req.body.newName}`;
       
-      fs.readdir(folderpath1, (err, files) => {
-        files.forEach(file => {
-          if (file.replaceAll(".png","") == (req.body.oldName))
-              fs.rename(filePath1old+".png", filePath1new+".png" , (err, data) => {
-                if (err) {
-                  console.error(err);
-                  return;
-                }         
-              });
-            
-            });});
+      
       fs.readdir(folderpath2, (err, files) => {
         files.forEach(file => {
           if (file.replaceAll(".png","") == (req.body.oldName)){

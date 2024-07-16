@@ -197,12 +197,12 @@ function App() {
     
     function getfetcheddata(){
      
-      return fetch('https://react-typescript-video-notes-server.onrender.com/api',{
+      return fetch('https://react-typescript-videonotes-server.vercel.app/api',{
         mode: 'cors',
         //credentials: 'include',
         //credentials: 'omit',
         //method: 'GET',
-        headers: {'Origin':'https://react-typescript-video-notes.onrender.com',
+        headers: {'Origin':'https://react-typescript-videonotes.vercel.app',
         'Accept': 'application/json','Content-Type': 'application/json'
         }
       })
@@ -220,12 +220,12 @@ function App() {
     
     function senddata(data){
       //try {
-        fetch("https://react-typescript-video-notes-server.onrender.com/api", {
+        fetch("https://react-typescript-videonotes-server.vercel.app/api", {
         //credentials: 'include',
         //credentials: 'omit',
         method: "POST", // Use POST method
         mode: 'cors',
-        headers: {'Origin':'https://react-typescript-video-notes.onrender.com',
+        headers: {'Origin':'https://react-typescript-videonotes.vercel.app',
           //"Content-Type": 'charset="utf-8"', // Correct content type for JSON
           'Accept': 'application/json','Content-Type': 'application/json'
           },
@@ -323,21 +323,9 @@ function App() {
       
       
       
-      tempCanvas.drawImage(video, 0, 0, Canvas.width, Canvas.height);
-      tempCanvas.drawImage(Canvas, 0, 0, Canvas.width, Canvas.height);
+     
     
-      const completeNoteBlobPromise = new Promise((resolve) => {
-        tCan.toBlob((blob) => {
-          if (blob) {
-            formData.append("completeNote", blob, `${unidecode(title_window_input.value)}.png`);
-            resolve(true);
-          } else {
-            resolve(false);
-          }
-        });
-      });
-    
-      Promise.all([sketchNoteBlobPromise, completeNoteBlobPromise]).then(() => {
+      Promise.all([sketchNoteBlobPromise]).then(() => {
         senddata(formData);
         tCan.remove();
       });
