@@ -8,7 +8,7 @@ When in drawing mode user has basic tools such us: Pen, Line, Circle, Square, Re
 Notes appear on left side panel.  
 When a note is clicked the app automatically moves to the specific frame with the note.  
 Each note can be renamed and deleted.   
-
+All the icons were made by me.
 
 https://github.com/Martinson1252/React_Typescript_Video_Notes/assets/39278140/cf40c6a6-ebc3-4f1c-ac95-f59c1d804f2d
 
